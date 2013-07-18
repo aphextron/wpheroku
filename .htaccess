@@ -1,0 +1,16 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpress_sandbox/WordPress/
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^assets/css/(.*) /wordpress_sandbox/WordPress/wp-content/themes/roots/assets/css/$1 [QSA,L]
+RewriteRule ^assets/js/(.*) /wordpress_sandbox/WordPress/wp-content/themes/roots/assets/js/$1 [QSA,L]
+RewriteRule ^assets/img/(.*) /wordpress_sandbox/WordPress/wp-content/themes/roots/assets/img/$1 [QSA,L]
+RewriteRule ^plugins/(.*) /wordpress_sandbox/WordPress/wp-content/plugins/$1 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wordpress_sandbox/WordPress/index.php [L]
+</IfModule>
+
+# END WordPress
